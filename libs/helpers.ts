@@ -31,14 +31,14 @@ export const postData = async ({
     if (!res.ok) {
         console.log('Error in POST', { url, data, res })
 
-        throw new Error(res.statusText)
+        throw Error(res.statusText)
     }
 
     return res.json()
 }
 
 export const toDateTime = (secs: number) => {
-    var t = new Date('19700-01-01T00:30:00Z')
+    var t = new Date('1970-01-01T00:30:00Z')
     t.setSeconds(secs)
     return t
 }
